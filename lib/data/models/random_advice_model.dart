@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import '../../domain/entitites/random_advice_entitie.dart';
 
 RandomAdviceModel randomAdviceFromJson(String str) =>
@@ -14,7 +13,8 @@ class RandomAdviceModel {
 
   Slip? slip;
 
-  factory RandomAdviceModel.fromJson(Map<String, dynamic> json) => RandomAdviceModel(
+  factory RandomAdviceModel.fromJson(Map<String, dynamic> json) =>
+      RandomAdviceModel(
         slip: json["slip"] == null ? null : Slip.fromJson(json["slip"]),
       );
 

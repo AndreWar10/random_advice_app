@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-
 import '../../utils/api.dart';
 import '../../utils/server_exception.dart';
 import '../models/random_advice_model.dart';
@@ -29,4 +28,3 @@ class RandomAdviceRemoteDataSourceImpl implements RandomAdviceRemoteDataSource {
     }
   }
 }
-

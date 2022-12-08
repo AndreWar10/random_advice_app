@@ -16,7 +16,7 @@ class RandomAdviceBloc extends Bloc<RandomAdviceEvent, RandomAdviceState> {
               emit(RandomAdviceIsError(failure.message));
             },
             (data) {
-              emit(RandomAdviceHasData(advice:  data));
+              emit(RandomAdviceHasData(advice: data));
             },
           );
         } else {}

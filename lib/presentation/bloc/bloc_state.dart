@@ -1,8 +1,5 @@
 import 'package:equatable/equatable.dart';
-
 import '../../domain/entitites/random_advice_entitie.dart';
-
-
 
 abstract class RandomAdviceState extends Equatable {
   const RandomAdviceState();
@@ -26,14 +23,11 @@ class RandomAdviceIsError extends RandomAdviceState {
 class RandomAdviceHasData extends RandomAdviceState {
   final RandomAdviceEntitie advice;
 
-  const RandomAdviceHasData({
-     required this.advice }
-  );
+  const RandomAdviceHasData({required this.advice});
 
-   RandomAdviceHasData copyWith({
+  RandomAdviceHasData copyWith({
     RandomAdviceEntitie? advice,
   }) {
-    
     return RandomAdviceHasData(
       advice: advice ?? this.advice,
     );

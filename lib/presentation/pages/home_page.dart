@@ -4,6 +4,7 @@ import '../../utils/injection.dart';
 import '../bloc/bloc.dart';
 import '../bloc/bloc_event.dart';
 import '../bloc/bloc_state.dart';
+import '../widgets/list_view_advices.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -29,27 +30,9 @@ class _HomePageState extends State<HomePage> {
                     getIt.get<RandomAdviceBloc>()..add(PullToRefreshEvent()),
                 child: Padding(
                   padding: const EdgeInsets.only(top: 20),
-                  child: ListView.separated(
-                      itemBuilder: (context, int index) {
-                        return ListTile(
-                          leading: Container(
-                            height: 50,
-                            width: 50,
-                            decoration: BoxDecoration(
-                              color: Colors.blue,
-                              borderRadius: BorderRadius.circular(50)
-                            ),
-                            child: Center(
-                              child: Text(state.advice.slip.id.toString(),
-                              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white)),
-                            ),
-                          ),
-                          title: Text(state.advice.slip.advice!,
-                              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-                        );
-                      },
-                      separatorBuilder: (_, __) => Divider(),
-                      itemCount: 1),
+                  child: RandomAdviceListViewWidget(
+                    advice: state.advice,
+                  ),
                 ));
           } else if (state is RandomAdviceIsError) {
             return Container();
